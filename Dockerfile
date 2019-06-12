@@ -1,4 +1,4 @@
-ARG DOTNET_SDK_TAG=2.2.204-stretch
+ARG DOTNET_SDK_TAG=2.2.300-stretch
 FROM mcr.microsoft.com/dotnet/core/sdk:${DOTNET_SDK_TAG}
 
 # Set the locale; suppress perl warnings
