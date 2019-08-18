@@ -1,5 +1,8 @@
-ARG DOTNET_SDK_TAG=2.2.300-stretch
+ARG DOTNET_SDK_TAG=2.2.401-stretch
 FROM mcr.microsoft.com/dotnet/core/sdk:${DOTNET_SDK_TAG}
+
+# support dotnet global tools OOTB
+ENV PATH="${PATH}:/root/.dotnet/tools"
 
 # Set the locale; suppress perl warnings
 ENV LC_ALL=en_US.UTF-8
@@ -11,7 +14,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install mono SDK
-ARG MONO_VERSION=5.18.1.3
+ARG MONO_VERSION=6.0.0.319
 ENV FrameworkPathOverride=/usr/lib/mono/4.7.1-api/
 RUN apt-get -y update && \
     apt-get -y install apt-transport-https dirmngr && \
