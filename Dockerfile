@@ -15,7 +15,7 @@ RUN apt-get update && \
 
 # Install mono SDK
 ARG MONO_VERSION=6.8.0.96
-ENV FrameworkPathOverride=/usr/lib/mono/4.7.1-api/
+ENV FrameworkPathOverride=/usr/lib/mono/4.7.2-api/
 RUN apt-get -y update && \
     apt-get -y install apt-transport-https dirmngr && \
     apt-key adv --no-tty --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
