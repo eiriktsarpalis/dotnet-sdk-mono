@@ -1,4 +1,4 @@
-ARG DOTNET_SDK_TAG=3.1.201-buster
+ARG DOTNET_SDK_TAG=3.1.300-buster
 FROM mcr.microsoft.com/dotnet/core/sdk:${DOTNET_SDK_TAG}
 
 # support dotnet global tools OOTB
