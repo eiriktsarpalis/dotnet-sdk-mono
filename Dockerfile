@@ -1,5 +1,5 @@
-ARG DOTNET_SDK_TAG=3.1.300-buster
-FROM mcr.microsoft.com/dotnet/core/sdk:${DOTNET_SDK_TAG}
+ARG DOTNET_SDK_TAG=5.0-buster-slim-amd64
+FROM mcr.microsoft.com/dotnet/sdk:${DOTNET_SDK_TAG}
 
 # support dotnet global tools OOTB
 ENV PATH="${PATH}:/root/.dotnet/tools"
@@ -14,7 +14,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install mono SDK
-ARG MONO_VERSION=6.8.0.105
+ARG MONO_VERSION=6.10.0.104
 ENV FrameworkPathOverride=/usr/lib/mono/4.7.2-api/
 RUN apt-get -y update && \
     apt-get -y install apt-transport-https dirmngr && \
